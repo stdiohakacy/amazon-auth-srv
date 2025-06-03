@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import configs from 'configs';
+import { FeatureModule } from 'src/modules/feature.module';
+import { ShareModule } from '@cornal-org/amazon-shared';
 
 @Module({
   imports: [
@@ -11,6 +13,8 @@ import configs from 'configs';
       envFilePath: ['.env'],
       expandVariables: false,
     }),
+    ShareModule,
+    FeatureModule,
   ],
 })
 export class AppModule {}

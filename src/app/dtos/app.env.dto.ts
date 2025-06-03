@@ -11,7 +11,8 @@ import {
   ENUM_APP_ENVIRONMENT,
   ENUM_APP_TIMEZONE,
 } from 'src/app/enums/app.enum';
-import { ENUM_MESSAGE_LANGUAGE } from '@cornal-org/amazon-core';
+
+import { ENUM_MESSAGE_LANGUAGE } from '@cornal-org/amazon-shared';
 
 export class AppEnvDto {
   @IsString()

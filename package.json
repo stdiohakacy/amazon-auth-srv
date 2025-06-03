@@ -20,7 +20,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@cornal-org/amazon-core": "^0.0.6",
+    "@cornal-org/amazon-base": "^0.0.2",
+    "@cornal-org/amazon-shared": "^0.0.7",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^10.4.18",
