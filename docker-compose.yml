@@ -17,22 +17,22 @@ services:
     networks:
       - amazon-auth-network
 
-  amazon-auth-srv:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: amazon-auth-srv-container
-    env_file:
-      - .env
-    ports:
-      - '${AMAZON_AUTH_SRV_HTTP_PORT}:${AMAZON_AUTH_SRV_HTTP_PORT}'
-    depends_on:
-      - amazon-auth-db
-    volumes:
-      - .:/app
-      - /app/node_modules
-    networks:
-      - amazon-auth-network
+  # amazon-auth-srv:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: amazon-auth-srv-container
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - '${AMAZON_AUTH_SRV_HTTP_PORT}:${AMAZON_AUTH_SRV_HTTP_PORT}'
+  #   depends_on:
+  #     - amazon-auth-db
+  #   volumes:
+  #     - .:/app
+  #     - /app/node_modules
+  #   networks:
+  #     - amazon-auth-network
 
 volumes:
   amazon-auth-db-data:

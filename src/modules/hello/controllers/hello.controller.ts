@@ -2,6 +2,7 @@ import { Controller, Get, VERSION_NEUTRAL } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import {
   HelperDateService,
+  Response,
   ResponseInterface,
 } from '@cornal-org/amazon-shared';
 import { HelloResponseDto } from '../dtos/response/hello.response.dto';
@@ -13,7 +14,7 @@ export class HelloController {
   constructor(private readonly helperDateService: HelperDateService) {}
 
   @HelloDoc()
-  // @Response('hello.hello', { cached: true })
+  @Response('hello.hello')
   @Get('/')
   async hello(): Promise<ResponseInterface<HelloResponseDto>> {
     const today = this.helperDateService.create();
