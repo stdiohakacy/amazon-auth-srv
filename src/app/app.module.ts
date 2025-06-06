@@ -2,7 +2,11 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import configs from 'configs';
 import { FeatureModule } from 'src/modules/feature.module';
-import { ShareModule } from '@cornal-org/amazon-shared';
+import {
+  CornalMessageModule,
+  CornalShareModule,
+} from '@cornal-org/amazon-shared';
+import path from 'path';
 
 @Module({
   imports: [
@@ -13,7 +17,12 @@ import { ShareModule } from '@cornal-org/amazon-shared';
       envFilePath: ['.env'],
       expandVariables: false,
     }),
-    ShareModule,
+    CornalShareModule,
+    CornalMessageModule.forRoot({
+      languagePath: path.join(__dirname, '../languages'),
+      availableLanguages: ['en'],
+      fallbackLanguage: 'en',
+    }),
     FeatureModule,
   ],
 })

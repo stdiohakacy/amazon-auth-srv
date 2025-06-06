@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@cornal-org/amazon-base": "^0.0.2",
-    "@cornal-org/amazon-shared": "^0.1.6",
+    "@cornal-org/amazon-shared": "^0.1.14",
     "@faker-js/faker": "^9.8.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^4.0.2",
